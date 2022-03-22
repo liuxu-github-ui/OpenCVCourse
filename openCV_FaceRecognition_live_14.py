@@ -23,6 +23,7 @@ nancyFace=FR.load_image_file(r'demoImages\known\Nancy Pelosi.jpg')
 nancyFaceEncode=FR.face_encodings(nancyFace)[0]
 
 knownEncodings=[donFaceEncode,nancyFaceEncode] #trained face data for later use compare unknown face with these trained data
+#print(knownEncodings[0])
 names=['Donald Trump','Nancy Pelosi']
 
 while True:
@@ -54,13 +55,7 @@ cv2.destroyAllWindows()
 
 
 
-while True:
-    ignore,frame = cam.read() #grab the image
-    grayFrame=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY) #create a grey frame
-    cv2.imshow('myWebCamImg',grayFrame) #assign the frame a name
-    cv2.moveWindow('myWebCamImg',0,0) # move webcam to a specify location 
-    if cv2.waitKey(1) & 0xff == ord('q'):  #wait for 1 second to see whether anyone press the key. If yes and press "q"
-        break #break the while loop
+
 
 
 
